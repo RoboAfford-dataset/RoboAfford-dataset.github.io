@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>RoboAfford: A Dataset and Benchmark for Enhancing Object and Spatial Affordance Learning in Robot Manipulation</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/robot.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -40,12 +40,28 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">RoboAfford: A Dataset and Benchmark for Enhancing Object and Spatial Affordance Learning in Robot Manipulation</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Yingbo Tang, Lingfeng Zhang, Shuyi Zhang, Yinuo Zhao, Xiaoshuai Hao</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Affiliation TBD<br>Conference Name and Year</span>
-          </div>
+          <div class="is-size-5 publication-authors" style="margin-top: 1rem;">
+  <span class="author-block">
+    <a href="#">Yingbo Tang</a><sup>1,2*</sup>,
+    <a href="#">Lingfeng Zhang</a><sup>3,*</sup>,
+    <a href="#">Shuyi Zhang</a><sup>1,2</sup>,
+    <a href="#">Yinuo Zhao</a><sup>4</sup>,
+    <a href="#">Xiaoshuai Hao</a><sup>5,†</sup>
+  </span>
+  <br>
+  <span class="author-block">
+    <sup>1</sup>Institute of Automation, Chinese Academy of Sciences<br>
+    <sup>2</sup>School of Artiffcial Intelligence, University of Chinese Academy of Sciences<br>
+    <sup>3</sup>Shenzhen International Graduate School, Tsinghua University<br>
+    <sup>4</sup>Beijing Institute of Technology<br>
+    <sup>5</sup>Beijing Academy of Artificial Intelligence (BAAI)
+  </span>
+  <br>
+  <span class="author-block">
+    <sup>*</sup>Co-first Authors &nbsp;&nbsp;
+    <sup>†</sup>Corresponding Author
+  </span>
+</div>
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
@@ -68,6 +84,16 @@
                   <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
                 </a>
               </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/tyb197/RoboAfford"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Dataset and Benchmark</span>
+                  </a>
             </div>
           </div>
         </div>
@@ -76,6 +102,22 @@
   </div>
 </section>
 
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+          <img 
+              src="static/images/figure1.png"
+              class="pipeline image"
+              alt="pipeline image"
+              style="margin-bottom: 20px;"
+          />
+      <h2 class="subtitle has-text-centered">
+         This work introduces <strong>RoboAfford</strong>, a novel large-scale dataset designed to enhance object and spatial affordance learning in robot manipulation. It encompasses three key dimensions: object affordance recognition, object affordance prediction, and spatial affordance localization.
+      </h2>
+    </div>
+  </div>
+</section>
+  
 <!-- Abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -103,6 +145,125 @@
   </div>
 </section>
 <!-- End Abstract -->
+
+  
+<!-- Data Construction Pipeline -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h2 class="title is-3">Dataset Construction</h2>
+            <img src="static/images/data_construction.png" alt="NaVid" class="center-image blend-img-background">
+            <div class="level-set has-text-justified">
+              <p class="has-text-justified">
+               Pipeline for constructing the RoboAfford dataset. We first discard the image with densely repeated objects, and then generate question answering pairs using human designed template or GPT-4o.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h2 class="subtitle is-4">Comparison of Existing Affordance Datasets</h2>
+            <img src="static/images/table1.png" alt="NaVid" class="center-image blend-img-background">
+            <div class="level-set has-text-justified">
+              <p class="has-text-justified">
+                Obj-Aff: Object Affordance. Spa-Aff: Spatial Affordance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+<!-- End Data Construction Pipeline -->
+
+
+
+<!-- Methodology -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h2 class="title is-3">Methodology</h2>
+            <img src="static/images/figure_framework.png" alt="NaVid" class="center-image blend-img-background">
+            <div class="level-set has-text-justified">
+              <p class="has-text-justified">
+               Our RoboAfford-Qwen Framework. We ffne-tune the model on the RoboAfford dataset to enhance object and spatial affordance capabilities. 
+              For robotic manipulation, we use depth information to transform 2D points representing objects and spatial affordances into 3D coordinates, which are then converted to end-effector positions for robotic manipulation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     </div>
+  </div>
+</section>
+<!-- End Methodology --> 
+
+
+<!-- Experiments -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h2 class="title is-3">Experimental Results</h2>
+            <br>
+            <h2 class="subtitle is-4">Comparison results of various VLMs on RoboAfford-Eval benchmark.</h2>
+            <img src="static/images/table_results.png" alt="NaVid" class="center-image blend-img-background">
+            <div class="level-set has-text-justified">
+              <p class="has-text-justified">
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h2 class="title is-4">Real-world Experiments</h2>
+            <img src="static/images/figure_rusults.png" alt="NaVid" class="center-image blend-img-background">
+            <div class="level-set has-text-justified">
+              <p class="has-text-justified">
+                Qualitative results of RoboAfford-Qwen, where cyan points indicate the object and spatial affordances.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <h2 class="subtitle is-4">Robot Manipulation</h2>
+            <img src="static/images/figure_franka.png" alt="NaVid" class="center-image blend-img-background">
+            <div class="level-set has-text-justified">
+              <p class="has-text-justified">
+                Results of deploying RoboAfford-Qwen to downstream robotic manipulation tasks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Experiments -->
 
 <!-- You can now continue with your video, carousel, BibTeX, etc. -->
 
